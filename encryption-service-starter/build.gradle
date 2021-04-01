@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'maven'
+}
+
+group = 'com.starter.research'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.projectlombok', name: 'lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	implementation group: 'org.encryption.service', name: 'encryption-service', version: '1.0-SNAPSHOT'
+	implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
+}
+
+test {
+	useJUnitPlatform()
+}
